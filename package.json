@@ -1,0 +1,30 @@
+{
+  "name": "pusher-triggers-bkg-test",
+  "version": "1.0.0",
+  "description": "Tests for connection in real time using Pusher",
+  "main": "index.js",
+  "scripts": {
+    "test": "\"echo \\\"Error: no test specified\\\" && exit 1\""
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/zazilibarra/pusher-triggers-BKG.git"
+  },
+  "keywords": [
+    "Pusher",
+    "JS",
+    "RealTime"
+  ],
+  "author": "Zazil Ibarra",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/zazilibarra/pusher-triggers-BKG/issues"
+  },
+  "homepage": "https://github.com/zazilibarra/pusher-triggers-BKG#readme",
+  "dependencies": {
+    "express": "^4.17.1",
+    "mssql": "^5.1.0",
+    "nodemon": "^1.19.1",
+    "pusher": "^2.2.1"
+  }
+}
