@@ -1,14 +1,11 @@
 'use strict'
 
-const dotenv = require('dotenv'); 
+const config = require('./config');
 const express = require('express');
 const bodyParser = require('body-parser');
 const Pusher = require('pusher');
 
-dotenv.config();
-
-const publicVapidKey = process.env.PUBLIC_VAPID_KEY;
-const privateVapidKey = process.env.PRIVATE_VAPID_KEY;
+const Viaje = require('./controllers/viaje');
 
 const app = express();
 
@@ -22,5 +19,17 @@ app.use(function(req, res, next) {
 app.get('/', (req, res) => {
     res.send(`API PUSHER DEMO TRIGGERS VERSIÓN:${process.env.npm_package_version}`);
 });
+
+//PUSHER
+var channels_client = new Pusher({
+    appId: config.appId,
+    key: config.key,
+    secret: config.secret,
+    cluster: config.cluster,
+    encrypted: true
+});
+
+//VIAJE
+app.post('/api/triggerViaje', Viaje.triggerViaje);
 
 module.exports = app
