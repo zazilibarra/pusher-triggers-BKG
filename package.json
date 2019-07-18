@@ -23,6 +23,7 @@
   },
   "homepage": "https://github.com/zazilibarra/pusher-triggers-BKG#readme",
   "dependencies": {
+    "dotenv": "^8.0.0",
     "express": "^4.17.1",
     "mssql": "^5.1.0",
     "nodemon": "^1.19.1",
