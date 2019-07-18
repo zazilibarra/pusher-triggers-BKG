@@ -1,7 +1,6 @@
-const dotenv = require('dotenv'); //Used for environment variables
+const dotenv = require('dotenv'); 
 dotenv.config();
 
 module.exports = {
-    hostname: process.env.HOSTNAME,
-    port: process.env.PORT
+	port:process.env.PORT || 3000,
 }

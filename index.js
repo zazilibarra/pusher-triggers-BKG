@@ -1,14 +1,8 @@
 'use strict'
 
-const http = require('http');
+const app = require('./app');
 const config = require('./config');
 
-const server = http.createServer((req, res) => {
-  res.statusCode = 200;
-  res.setHeader('Content-Type', 'text/plain');
-  res.end('Logistik GO | 2019\n');
-});
-
-server.listen(config.port, config.hostname, () => {
-  console.log(`Server running at http://${config.hostname}:${config.port}/`);
+const server = app.listen(config.port, () => {
+  console.log(`Express running → PORT ${server.address().port}`);
 });
