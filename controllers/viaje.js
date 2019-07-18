@@ -5,7 +5,9 @@ function triggerViaje(req, res){
 
     console.log(idViaje);
 
-    res.status(200).send({id: idViaje});
+    pusher.trigger('viajes', 'update-evidencias-fisicas', {id: idViaje});
+
+	res.status(200).send(`FINISH PUSHER`);
 }
 
 module.exports = {

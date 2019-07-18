@@ -21,7 +21,7 @@ app.get('/', (req, res) => {
 });
 
 //PUSHER
-var channels_client = new Pusher({
+var channel_viajes = new Pusher({
     appId: config.appId,
     key: config.key,
     secret: config.secret,
@@ -30,6 +30,14 @@ var channels_client = new Pusher({
 });
 
 //VIAJE
-app.post('/api/triggerViaje', Viaje.triggerViaje);
+app.post('/api/triggerViaje', (req, res) => {
+    let idViaje = req.body.idViaje;
+
+    console.log(idViaje);
+
+    channel_viajes.trigger('viajes', 'update-evidencias-fisicas', {id: idViaje});
+
+	res.status(200).send(`FINISH PUSHER`);
+});
 
 module.exports = app
